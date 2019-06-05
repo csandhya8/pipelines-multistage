@@ -35,9 +35,8 @@ stages:
     - script: echo Staging
 
 - stage: prod
-  dependsOn: staging
   jobs:
-  - job: deploy_prod
+  - deployment:
     pool:
       vmImage: 'Ubuntu 16.04'
     environment: 'stage'
